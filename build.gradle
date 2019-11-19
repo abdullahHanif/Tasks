@@ -40,5 +40,6 @@ ext{
     coroutine_adapter_version = "0.9.2"
     room_version = "2.1.0-alpha04"
     lifecycle_extensions_version = "2.1.0"
+    dagger_version = '2.21'
 }
 

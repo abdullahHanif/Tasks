@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Tasks</string>
+    <string name="db_name">tasks.db</string>
 </resources>

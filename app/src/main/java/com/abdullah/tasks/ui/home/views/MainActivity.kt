@@ -1,4 +1,4 @@
-package com.abdullah.tasks.ui.home
+package com.abdullah.tasks.ui.home.views
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
