@@ -4,11 +4,12 @@ import androidx.room.Database
 import androidx.room.RoomDatabase
 import com.abdullah.tasks.db.dao.JobsDao
 import com.abdullah.tasks.di.app.scope.ApplicationScope
+import com.abdullah.tasks.ui.home.model.Job
 
 
 @ApplicationScope
 @Database(
-    entities = [String::class],
+    entities = [Job::class],
     version = 1,
     exportSchema = false
 )

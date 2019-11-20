@@ -23,6 +23,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    dataBinding {
+        enabled true
+    }
 }
 
 dependencies {
@@ -51,6 +54,7 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutine_version"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine_version"
 
+
     //    room
     implementation "androidx.room:room-runtime:$room_version"
     implementation "androidx.room:room-coroutines:$room_version"
@@ -63,10 +67,14 @@ dependencies {
     //dagger compiler extension
     kapt "com.google.dagger:dagger-compiler:$dagger_version"
 
+   //card view android
+    implementation "com.google.android.material:material:$cardview_version"
+
     //testing stuff
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    implementation 'androidx.room:room-coroutines:2.1.0-alpha04'
+
+
 
 }
