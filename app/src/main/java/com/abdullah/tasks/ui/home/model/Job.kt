@@ -9,7 +9,7 @@ import java.io.Serializable
 
 @Entity
 data class Job(
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     var id: Int,
     var __status: String? = "",
     var customer_name: String? = "",

@@ -13,8 +13,8 @@ interface JobsDao {
     @Query("SELECT * from Job WHERE id = :id")
     suspend fun getJobById(id: Int): Job
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(jobs: List<Job>)
+    @Insert
+    suspend fun insert(job: Job)
 
     @Query("DELETE from Job")
     suspend fun deleteAll(): Int

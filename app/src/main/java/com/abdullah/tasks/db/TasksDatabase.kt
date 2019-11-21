@@ -12,10 +12,10 @@ import com.abdullah.tasks.ui.home.model.JobTypeConverter
 @ApplicationScope
 @Database(
     entities = [Job::class],
-    version = 1,
+    version = 2,
     exportSchema = false
 )
-@TypeConverters(JobTypeConverter::class)
+//@TypeConverters(JobTypeConverter::class)
 abstract class TasksDatabase : RoomDatabase() {
 
     abstract fun jobsDao(): JobsDao
