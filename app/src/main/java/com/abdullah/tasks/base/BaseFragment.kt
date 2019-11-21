@@ -29,7 +29,7 @@ abstract class BaseFragment : Fragment(){
         return activityViewModel as T ?: throw ExceptionInInitializerError("Unable to get viewmodel")
     }
 
-    fun screenTransactions()= (activity as AppCompatActivity)
+    fun screenTransactions() = (activity as AppCompatActivity)
 
     fun observeDataEvents(viewModel: BaseViewModel){
 

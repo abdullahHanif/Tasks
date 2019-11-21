@@ -17,10 +17,16 @@ class JobsAdapter(val viewModel: JobsViewModel) : RecyclerView.Adapter<JobsAdapt
         return ViewHolder(binding)
     }
 
-    override fun getItemCount() = 5
+    override fun getItemCount() = viewModel.list.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-//        holder.binding.model = viewModel.list[position]
+        holder.binding.model = viewModel.list[position]
+
+        holder.binding.root.setOnClickListener{
+            viewModel.menuItemClick(viewModel.list[position])
+        }
+
+
     }
 
     class ViewHolder(val binding: LiJobBinding) : RecyclerView.ViewHolder(binding.root)

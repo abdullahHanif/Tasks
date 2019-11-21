@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 open class BaseViewModel : ViewModel(){
+    val TAG = this::class.java.name
 
     protected val _dataEvent: MutableLiveData<BaseEventFilter<BaseDataEvents>> = MutableLiveData()
     val obDataEvent: LiveData<BaseEventFilter<BaseDataEvents>> = _dataEvent

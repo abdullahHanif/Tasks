@@ -3,14 +3,16 @@ package com.abdullah.tasks.network
 import android.content.Context
 import android.util.Log
 import android.widget.Toast
+import com.abdullah.tasks.di.app.scope.ApplicationScope
 import kotlinx.coroutines.Deferred
 import okhttp3.ResponseBody
 import retrofit2.Response
 import javax.inject.Inject
 
+@ApplicationScope
 class NetworkCall @Inject constructor(
-    val apiInterface: ApiInterface,
-    val context: Context
+    protected val apiInterface: ApiInterface,
+    protected val context: Context
 ) {
 
     suspend inline fun get(endpoint: String): RequestResult<out Any> {

@@ -16,6 +16,7 @@ class AppClass : Application() {
     override fun onCreate() {
         super.onCreate()
         context = this
+
         ComponentFactory.createComponent(AppComponent::class).inject(this)
 
 //        registering network state receiver

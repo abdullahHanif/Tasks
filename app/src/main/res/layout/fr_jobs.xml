@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <com.abdullah.tasks.custom.LoadingConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/root_view"
+        android:background="@color/colorDullWhite"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -21,21 +23,39 @@
             app:layout_constraintTop_toTopOf="parent" />
 
 
-        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-            android:id="@+id/pullToRefresh"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/title">
+<!--        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout-->
+<!--            android:id="@+id/pull_to_refresh"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/title">-->
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/RVjobsList"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:clipToPadding="false"
-                android:paddingBottom="24dp"
-                android:scrollbars="none"/>
-        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <androidx.recyclerview.widget.RecyclerView
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/title"
+                        android:id="@+id/rv_jobs_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:clipToPadding="false"
+                        android:paddingBottom="16dp"
+                        android:paddingTop="8dp"
+                        android:scrollbars="none"/>
+        <!--        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>-->
+
+        <TextView
+            android:id="@+id/NoDataMessage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/no_data_found"
+            android:textSize="18sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </com.abdullah.tasks.custom.LoadingConstraintLayout>
+
+
 </layout>

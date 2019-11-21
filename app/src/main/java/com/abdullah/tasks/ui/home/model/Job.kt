@@ -2,6 +2,7 @@ package com.abdullah.tasks.ui.home.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.io.Serializable
 
 @Entity
 data class Job(
@@ -17,11 +18,11 @@ data class Job(
     var job_longitude: String? = "",
     var job_postalcode: Int? = 0,
     var job_street: String? = "",
-    var order_duration: Int? = 0,
+    var order_duration: Double? = 0.0,
     var order_id: String? = "",
     var order_time: String? = "",
     var payment_method: String? = "",
     var price: String? = "",
     var recurrency: Int? = 0,
     var status: String? = ""
-)
+):Serializable
