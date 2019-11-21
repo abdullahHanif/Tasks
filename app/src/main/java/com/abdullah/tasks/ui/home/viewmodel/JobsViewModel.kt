@@ -14,6 +14,7 @@ import com.google.gson.Gson
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 class JobsViewModel @Inject constructor(
@@ -37,6 +38,10 @@ class JobsViewModel @Inject constructor(
                 is RequestResult.Success -> {
                     list = gson.fromJson(res.data.toString(), Array<Job>::class.java).asList()
                     navEvent.value = BaseEventFilter(JobsNavEvents.NotifyAdapter)
+
+                    withContext(Dispatchers.Default) {
+                        jobsRepository.storeJobs(list)
+                    }
                 }
                 is RequestResult.Exception -> {
                     Log.d(TAG, res.exception.message)
@@ -44,6 +49,15 @@ class JobsViewModel @Inject constructor(
                 is RequestResult.Error -> {
                     Log.d(TAG, res.errorBody.message())
                 }
+
+                is RequestResult.Local -> {
+                    if ((res.data as List<Job>).isNotEmpty()) {
+                        list = res.data
+                        navEvent.value = BaseEventFilter(JobsNavEvents.NotifyAdapter)
+
+                    }
+                }
+
             }
         }
     }
