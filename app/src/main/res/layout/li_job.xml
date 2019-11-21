@@ -106,7 +106,7 @@
                 android:gravity="center_vertical"
                 android:maxLength="30"
                 android:maxLines="1"
-                android:text="@{model.distance +` away`}"
+                android:text="@{(model.distance.length() > 3 ? model.distance.substring(0, 3) : model.distance)+` km away`}"
                 android:textSize="12sp"
                 card_view:layout_constraintEnd_toEndOf="parent"
                 card_view:layout_constraintHorizontal_bias="0.04"
